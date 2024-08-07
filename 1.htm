@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .width-change {
+      width: 100px;
+      height: 50px;
+      background-color: lightblue;
+      transition: width 0.3s;
+      margin-top: 10px;
+    }
+
+    /* General sibling combinator */
+    .hover-target:hover ~ .width-change {
+      width: 200px;
+    }
+
+    /* Adjacent sibling combinator */
+    .hover-target + .width-change {
+      margin-top: 0;
+    }
+
+    .hover-target:hover + .width-change {
+      width: 200px;
+    }
+
+    /* Parent-child relationship */
+    .container:hover .width-change {
+      width: 200px;
+    }
+  </style>
+  <title>Hover Example</title>
+</head>
+<body>
+  <div class="container">
+    <div class="hover-target">Hover over me</div>
+    <div class="width-change">I will change width</div>
+  </div>
+</body>
+</html>
